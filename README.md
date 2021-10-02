@@ -1,5 +1,5 @@
 # #GamaAcademy[Hacker] - DESAFIO EM GRUPO 1 (GRUPO 10)
-<h2>Integrantes: Guilherme Bublitz / Marina Medeiros / Miquéias Lima</h1>
+<h1>Integrantes: Guilherme Bublitz / Marina Medeiros / Miquéias Lima</h1>
 
 ### Contexto: Continuamos no nosso contexto de sermos parte de uma equipe de desenvolvimento de websites e fomos contratados para a criação de um site de catálogo de produtos. Agora precisamos definir algumas regras de negócio para nosso Comércio Eletrônico e para isso precisamos definir algumas funcionalidades que podemos trabalhar usando Lógica de Programação e Javascript.
 
