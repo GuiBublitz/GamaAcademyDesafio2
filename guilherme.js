@@ -1,1 +1,1 @@
-//Seguir padrão de código
+//Boa sorte pra mimm tambémm
