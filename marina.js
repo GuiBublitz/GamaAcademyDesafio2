@@ -1095,3 +1095,4 @@ var listaProdutos = [
     }
 ]
 
+//Agora começam as Functions com as resoluções 
