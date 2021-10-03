@@ -1,4 +1,4 @@
-//Boa sorte pra mimm tambémm
+//Boa sorteee
 
 var listaProdutos = [
     {
@@ -1095,3 +1095,4 @@ var listaProdutos = [
     }
 ]
 
+//Agora começam as Functions com as resoluções 
