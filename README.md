@@ -16,7 +16,7 @@ Objetivo:  criar várias funcionalidades para as regras de negócio do nosso ECo
  - 6 - Produto mais caro da loja (bem como seu departamento - considere apenas o preço dele)
  - 7 - Produto mais barato da loja (bem como seu departamento - considere apenas o preço dele)
  - 8 - Produto de estoque mais valioso (considere o preço multiplicado pela quantidade e também apenas EM ESTOQUE)
- - 9 - Produto em estoque menos valioso (considere o preço multiplicado pela quantidade e também apenas EM ESTOQUE)
+ - 9 - Produto em estoque menos valioso (considere o preço multiplicado pela quantidade e também apenas EM ESTOQUE )
  - 10 - Valor do ticket médio dos produtos da empresa (basicamente o valor total do inventário dividido pelo número de itens - considere TODOS os produtos, porém considere apenas 1 exemplar por produto)
  - 11 - Somatória de itens por departamento (você deverá retornar um objeto contendo o nome do departamento e o total de itens nele - Novamente considere os produtos “EM ESTOQUE” - e é apenas a somatória da quantidade de itens)
  - 12 - Valor total do inventário por departamento (similar ao item anterior - considere TODOS os produtos)
