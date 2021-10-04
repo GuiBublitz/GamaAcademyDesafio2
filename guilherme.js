@@ -1096,3 +1096,15 @@ var listaProdutos = [
 ]
 
 //Agora começam as Functions com as resoluções 
+
+function exercicio3(){
+    
+}
+
+function exercicio6(){
+
+}
+
+function exercicio9(){
+
+}
