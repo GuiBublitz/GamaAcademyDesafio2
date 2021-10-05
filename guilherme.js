@@ -1097,14 +1097,136 @@ var listaProdutos = [
 
 //Agora começam as Functions com as resoluções 
 
+function exercicio1(){
+    var contador = 0;
+    for(i = 0; i < listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        contador = contador + produto.qtdEstoque;
+    }
+    console.log("Quantidade total de itens em estoque é de: " + contador);
+}
+
+function exercicio2(){
+    var contador = 0;
+    for (i = 0; i < listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        if (produto.emDestaque == "sim"){
+            contador = contador + produto.qtdEstoque;
+        }
+    }
+    console.log("Total de itens em destaque: "+ contador);
+}
+
 function exercicio3(){
-    
+    var contador = 0;
+    for (i = 0; i < listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        if (produto.disponivel == "sim"){
+            contador = contador + produto.qtdEstoque;
+        }
+    }
+    console.log("Total de itens disponíveis: "+ contador);
+}
+
+function exercicio4(){
+    var contador = 0;
+    for (i = 0; i < listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        if (produto.disponivel == "sim" && produto.emDestaque == "sim"){
+            contador = contador + produto.qtdEstoque;
+        }
+    }
+    console.log("Total de itens disponíveis e em destaque: "+ contador);
+}
+
+function exercicio5(){
+    var contador = 0;
+    for(i = 0; i < listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        let conta = produto.preco * produto.qtdEstoque;
+        contador = contador + conta;
+    }
+    console.log("valor total do meu inventário é de "+contador);
 }
 
 function exercicio6(){
+    var ProdutoMaisCaro = listaProdutos[0];
+    for(i= 1; i < listaProdutos.length; i++){
+        produto = listaProdutos[i];
+        if(produto.preco > ProdutoMaisCaro.preco){
+            ProdutoMaisCaro = produto;
+        }
+    }
+    console.log("O produto mais caro da loja é o "+ProdutoMaisCaro.descricao+" cujo preço é de R$"
+    +ProdutoMaisCaro.preco );
+    console.log("Departamento ID:"+ProdutoMaisCaro.departamento.idDepto +", Departamento nome:"+ ProdutoMaisCaro.departamento.nomeDepto)
+}
 
+function exercicio7(){
+    var ProdutoMaisBarato = listaProdutos[0];
+    for(i= 1; i < listaProdutos.length; i++){
+        produto = listaProdutos[i];
+        if(produto.preco < ProdutoMaisBarato.preco){
+            ProdutoMaisBarato = produto;
+        }
+    }
+    console.log("O produto mais barato da loja é o "+ProdutoMaisBarato.descricao+" cujo preço é de R$"
+    +ProdutoMaisBarato.preco );
+    console.log("Departamento ID:"+ProdutoMaisBarato.departamento.idDepto +", Departamento nome:"+ ProdutoMaisBarato.departamento.nomeDepto)
+}
+
+function exercicio8(){
+    var ProdutoMaisValioso = listaProdutos[0];
+    /*Definindo valor inicial do meu Produto menos valioso*/ 
+    var y = 0;
+    do {
+        ProdutoMaisValioso = listaProdutos[y];
+        y = y + 1;
+      } while (ProdutoMaisValioso.qtdEstoque == 0 );
+    /* --- --- --- */ 
+    var conta = 0;
+    var ProdutoMaisValioso = listaProdutos[0];
+    for(i=1; i < listaProdutos.length; i++ ){
+        let produto = listaProdutos[i];
+        conta = produto.preco * produto.qtdEstoque;
+        if ((conta > ProdutoMaisValioso.preco * ProdutoMaisValioso.qtdEstoque) && (produto.qtdEstoque > 0)) {
+            ProdutoMaisValioso = produto;
+        }
+    }
+    console.log("Produto de estoque mais valioso é o "+ ProdutoMaisValioso.descricao + " cujo preço da unidade é de R$" + ProdutoMaisValioso.preco +
+    " e o valor do estoque é de R$"+ProdutoMaisValioso.preco * ProdutoMaisValioso.qtdEstoque);
 }
 
 function exercicio9(){
+    
+    var ProdutoMenosValioso = listaProdutos[0];
+    /*Definindo valor inicial do meu Produto menos valioso*/ 
+    var y = 0;
+    do {
+        
+        ProdutoMenosValioso = listaProdutos[y];
+        y = y + 1;
+      } while (ProdutoMenosValioso.qtdEstoque == 0 );
+    /* --- --- --- */ 
+    var conta = 0;
+    for(i=1; i < listaProdutos.length; i++ ){
+        let produto = listaProdutos[i];
+        conta = produto.preco * produto.qtdEstoque;
+        if ((conta < ProdutoMenosValioso.preco * ProdutoMenosValioso.qtdEstoque) && (produto.qtdEstoque > 0)){
+            ProdutoMenosValioso = produto;
+        }
+    }
+    console.log("Produto de estoque menos valioso é o "+ ProdutoMenosValioso.descricao + " cujo preço da unidade é de R$" + ProdutoMenosValioso.preco +
+    " e o valor do estoque é de R$"+ProdutoMenosValioso.preco * ProdutoMenosValioso.qtdEstoque);
+}
 
+function exercicio10(){
+    var contador = 0;
+    for(i = 0; i < listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        let conta = produto.preco * produto.qtdEstoque;
+        contador = contador + conta;
+    }
+    var NumeroItens = listaProdutos.length;
+    console.log("Valor do ticket médio dos produtos da empresa é de: " + contador / NumeroItens);
 }
