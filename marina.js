@@ -1124,3 +1124,47 @@ function exercicio1() {
   }
   console.log('Total de produtos em estoque =' + ' ' + total)
 }
+
+function exercicio4(){
+  var total = 0;
+  for (i=0; i<listaProdutos.length; i++){
+      let produto = listaProdutos[i];
+
+      if (produto.disponivel == "sim" && produto.emDestaque == "sim"){
+        total = total + produto.qtdEstoque; 
+      }
+  }
+  console.log("Total de itens disponíveis e em destaque:" + total)
+}
+
+function exercicio7(){
+  let produtoMaisBaratoLoja = listaProdutos[0];  
+
+  for(i=1; i<listaProdutos.length; i++){ 
+      let produto = listaProdutos[i];
+      if (produto.preco < produtoMaisBaratoLoja.preco) {
+          produtoMaisBaratoLoja = produto;
+      }
+  }
+  console.log("O produto mais barato da empresa é:")
+  console.log(produtoMaisBaratoLoja)
+}
+
+
+//DÚVIDAAAA
+function exercicio10(){
+  var itensTotal = 0; //qnt de itens considerando 1 por produto
+  var totalPrecoProdutos = 0;
+  var ticketMedio = 0; //pra fazer o ticket medio tenho que pegar o valor de todos os produtos(considerando 1 tipo de cada) e dividir pela quantidade de itens
+
+  for(i=0; i<listaProdutos.length; i++){
+      let produto = listaProdutos[i]; 
+      if  (produto.qtdEstoque >= 1) {
+          produto.qtdEstoque = 1;
+          itensTotal = itensTotal + produto.qtdEstoque;
+          totalPrecoProdutos = totalPrecoProdutos + (produto.preco * produto.qtdEstoque);
+          ticketMedio = totalPrecoProdutos / itensTotal;
+      }
+  }  
+  console.log("O valor do ticket médio dos produtos da empresa é de R$" + ' ' + ticketMedio)
+}
