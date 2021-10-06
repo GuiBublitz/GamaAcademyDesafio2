@@ -29,7 +29,7 @@ Objetivo:  criar várias funcionalidades para as regras de negócio do nosso ECo
 ### #Sprint Backlog:
  - 1 - Quantidade total de itens em estoque (somatória das quantidades de todos os produtos)
  - 2 - Quantidade total de itens em destaque (somatória das quantidades dos itens marcados como "emDestaque : sim")
- - 3 - Quantidade total de itens disponíveis (similar ao anterior)
+ - 3 - Quantidade total de itens disponíveis (similar ao anterior) 
  - 4 - Quantidade de itens disponíveis e em destaque
  - 5 - Valor total do inventário da empresa (somatória dos valores individuais multiplicado pela quantidade em estoque - considere apenas os produtos “EM ESTOQUE”)
  - 6 - Produto mais caro da loja (bem como seu departamento - considere apenas o preço dele)
