@@ -1124,3 +1124,39 @@ function exercicio1() {
   }
   console.log('Total de produtos em estoque =' + ' ' + total)
 }
+
+function exercicio4(){
+  var total = 0;
+  for (i=0; i<listaProdutos.length; i++){
+      let produto = listaProdutos[i];
+
+      if (produto.disponivel == "sim" && produto.emDestaque == "sim"){
+        total = total + produto.qtdEstoque; 
+      }
+  }
+  console.log("Total de itens disponíveis e em destaque:" + total)
+}
+
+function exercicio7(){
+  let produtoMaisBaratoLoja = listaProdutos[0];  
+
+  for(i=1; i<listaProdutos.length; i++){ 
+      let produto = listaProdutos[i];
+      if (produto.preco < produtoMaisBaratoLoja.preco) {
+          produtoMaisBaratoLoja = produto;
+      }
+  }
+  console.log("O produto mais barato da empresa é:")
+  console.log(produtoMaisBaratoLoja)
+}
+
+function exercicio10(){
+  var ticket = 0;
+  for(i = 0; i < listaProdutos.length; i++){
+      let produto = listaProdutos[i];
+      let totalPrecoProdutos = produto.preco * produto.qtdEstoque;
+      ticket = ticket + totalPrecoProdutos;
+  }
+  var NumeroItens = listaProdutos.length;
+  console.log("Valor do ticket médio dos produtos da empresa é de: " + ticket / NumeroItens);
+}
