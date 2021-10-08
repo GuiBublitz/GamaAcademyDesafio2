@@ -1096,3 +1096,44 @@ var listaProdutos = [
 ]
 
 //Agora começam as Functions com as resoluções 
+function exercicio2(){
+    var numero = 0;
+    for (i = 0; i < listaProdutos.length; i++){
+        let item = listaProdutos[i];
+        if (item.emDestaque == "sim"){
+            numero = numero + item.qtdEstoque;
+        }
+    }
+    console.log("A quantidade total de itens em destaque é de " + numero + " unidades.");
+}
+
+function exercicio5(){
+    var numero = 0;
+    for(i = 0; i < listaProdutos.length; i++){
+        let item = listaProdutos[i];
+        let valor = item.preco * item.qtdEstoque;
+        numero = numero + valor;
+    }
+    console.log("O valor total do inventário da empresa é de " + numero + " reais.");
+}
+
+function exercicio8(){
+    var ProdutoMaisValioso = listaProdutos[0];
+    var y = 0;
+    do {
+        ProdutoMaisValioso = listaProdutos[y];
+        y = y + 1;
+      } while (ProdutoMaisValioso.qtdEstoque == 0 );
+    var numero = 0;
+    var ProdutoMaisValioso = listaProdutos[0];
+    for(i=1; i < listaProdutos.length; i++ ){
+        let item = listaProdutos[i];
+        numero = item.preco * item.qtdEstoque;
+        if ((numero > ProdutoMaisValioso.preco * ProdutoMaisValioso.qtdEstoque) && (item.qtdEstoque > 0)) {
+            ProdutoMaisValioso = item;
+        }
+    }
+    
+    console.log("O produto de estoque mais valioso é: " + ProdutoMaisValioso.descricao + ", em que o valor unitário é de " + ProdutoMaisValioso.preco +
+    " reais e o valor acumulado do estoque é de " + ProdutoMaisValioso.preco * ProdutoMaisValioso.qtdEstoque + " reais.");
+}
