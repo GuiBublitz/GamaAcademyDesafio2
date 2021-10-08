@@ -1116,8 +1116,8 @@ function exercicio6(){
             ProdutoMaisCaro = produto;
         }
     }
-    console.log("O produto mais caro da loja é o "+ProdutoMaisCaro.descricao+" cujo preço é de R$"
-    +ProdutoMaisCaro.preco );
+    console.log("O produto mais caro da loja é o "+ProdutoMaisCaro.descricao+" cujo preço é de "
+    +ProdutoMaisCaro.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) );
     console.log("Departamento ID:"+ProdutoMaisCaro.departamento.idDepto +", Departamento nome:"+ ProdutoMaisCaro.departamento.nomeDepto)
 }
 
@@ -1141,6 +1141,39 @@ function exercicio9(){
         }
     }
     console.log("Produto de estoque menos valioso é o "+ ProdutoMenosValioso.descricao + " cujo preço da unidade é de R$" + ProdutoMenosValioso.preco +
-    " e o valor do estoque é de R$"+ProdutoMenosValioso.preco * ProdutoMenosValioso.qtdEstoque);
+    " e o valor do estoque é de "+(ProdutoMenosValioso.preco * ProdutoMenosValioso.qtdEstoque).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
 }
-
+function all(){
+    console.log("");
+    console.log("Exercício Número 1:");
+    exercicio1();
+    console.log("");
+    console.log("Exercício Número 2:");
+    exercicio2();
+    console.log("");
+    console.log("Exercício Número 3:");
+    exercicio3();
+    console.log("");
+    console.log("Exercício Número 4:");
+    exercicio4();
+    console.log("");
+    console.log("Exercício Número 5:");
+    exercicio5();
+    console.log("");
+    console.log("Exercício Número 6:");
+    exercicio6();
+    console.log("");
+    console.log("Exercício Número 7:");
+    exercicio7();
+    console.log("");
+    console.log("Exercício Número 8:");
+    exercicio8();
+    console.log("");
+    console.log("Exercício Número 9:");
+    exercicio9();
+    console.log("");
+    console.log("Exercício Número 10:");
+    exercicio10();
+    console.log("");
+    
+}

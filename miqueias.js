@@ -1114,7 +1114,7 @@ function exercicio5(){
         let valor = item.preco * item.qtdEstoque;
         numero = numero + valor;
     }
-    console.log("O valor total do inventário da empresa é de " + numero + " reais.");
+    console.log("O valor total do inventário da empresa é de " + numero.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
 }
 
 function exercicio8(){
@@ -1134,6 +1134,6 @@ function exercicio8(){
         }
     }
     
-    console.log("O produto de estoque mais valioso é: " + ProdutoMaisValioso.descricao + ", em que o valor unitário é de " + ProdutoMaisValioso.preco +
-    " reais e o valor acumulado do estoque é de " + ProdutoMaisValioso.preco * ProdutoMaisValioso.qtdEstoque + " reais.");
+    console.log("O produto de estoque mais valioso é: " + ProdutoMaisValioso.descricao + ", em que o valor unitário é de " + ProdutoMaisValioso.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) +
+    " e o valor acumulado do estoque é de " + (ProdutoMaisValioso.preco * ProdutoMaisValioso.qtdEstoque).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
 }
