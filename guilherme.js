@@ -1146,6 +1146,97 @@ function exercicio9(){
     console.log("Produto de estoque menos valioso é o "+ ProdutoMenosValioso.descricao + " cujo preço da unidade é de R$" + ProdutoMenosValioso.preco +
     " e o valor do estoque é de "+(ProdutoMenosValioso.preco * ProdutoMenosValioso.qtdEstoque).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
 }
+function exercicio12(){
+    var listaDeptos = [];
+    let codDepto = 0;
+    for(i= 0; i < listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        if(produto.departamento.idDepto != codDepto){
+            let itemLista = {
+                nomeDepto : produto.departamento.nomeDepto,
+                idDepto : produto.departamento.idDepto,
+                valorInventario : 0
+            };
+            listaDeptos.push(itemLista);
+            codDepto = produto.departamento.idDepto;
+        }
+    }
+    for(i=0;i< listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        for(j=0; j < listaDeptos.length; j++){
+            if(produto.departamento.idDepto == listaDeptos[j].idDepto){
+                listaDeptos[j].valorInventario = ((listaDeptos[j].valorInventario) + (produto.preco * produto.qtdEstoque));
+                
+                break;
+            }
+        }
+    }
+    /*Formatando par dinheiro */ 
+    for(y=0;y<listaDeptos.length;y++){
+    listaDeptos[y].valorInventario = listaDeptos[y].valorInventario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    }
+    console.log(listaDeptos);
+    /* --- --- --- */
+  
+}
+function exercicio13(){
+    var listaDeptos = [];
+    let codDepto = 0;
+    for(i= 0; i < listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        if(produto.departamento.idDepto != codDepto){
+            let itemLista = {
+                nomeDepto : produto.departamento.nomeDepto,
+                idDepto : produto.departamento.idDepto,
+                ticketMedio : 0,
+                produtosPorDepartamento : 0,
+                valorInventario: 0
+
+            };
+            listaDeptos.push(itemLista);
+            codDepto = produto.departamento.idDepto;
+        }
+    }
+/*Quantos produtos eu tenho por departamento: */ 
+    for(a = 0; a < listaProdutos.length; a++){
+        let produto = listaProdutos[a];
+        for (y = 0; y < listaDeptos.length; y++){
+            if((produto.departamento.idDepto) == (y + 1)){
+                listaDeptos[y].produtosPorDepartamento = listaDeptos[y].produtosPorDepartamento + produto.qtdEstoque;
+
+                break;
+            }
+        }
+    }
+/*--------------------------------*/ 
+
+/*Quanto vale meu estoque por departamento*/ 
+    for(i=0;i< listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        for(j=0; j < listaDeptos.length; j++){
+            if(produto.departamento.idDepto == listaDeptos[j].idDepto){
+                listaDeptos[j].valorInventario = ((listaDeptos[j].valorInventario) + (produto.preco * produto.qtdEstoque));
+                
+                break;
+            }
+        }
+    }
+/*------------------------*/ 
+
+/*Nosso ticket medio*/ 
+    for(z=0;z<listaDeptos.length;z++){
+        listaDeptos[z].ticketMedio = listaDeptos[z].valorInventario / listaDeptos[z].produtosPorDepartamento;
+    }
+/*--------------------------*/
+
+/*Formatando para dinheiro */ 
+    for(y=0;y<listaDeptos.length;y++){
+        listaDeptos[y].valorInventario = listaDeptos[y].valorInventario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        listaDeptos[y].ticketMedio = listaDeptos[y].ticketMedio.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    }
+/* --- --- --- */
+    console.log(listaDeptos);
+}
 function all(){
     console.log("");
     console.log("Exercício Número 1:");
@@ -1177,6 +1268,12 @@ function all(){
     console.log("");
     console.log("Exercício Número 10:");
     exercicio10();
+    console.log("");
+    console.log("Exercício Número 12:");
+    exercicio12();
+    console.log("");
+    console.log("Exercício Número 13:");
+    exercicio13();
     console.log("");
     
 }
