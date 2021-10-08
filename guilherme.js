@@ -1095,6 +1095,9 @@ var listaProdutos = [
     }
 ]
 
+console.log("Olá, avaliador(a)! Criamos uma function chama all que mostra todas as respostas de uma vez!");
+console.log("Para chamá-la digite no console 'all();' ");
+
 //Agora começam as Functions com as resoluções 
 
 function exercicio3(){
