@@ -42,9 +42,9 @@ Objetivo:  criar várias funcionalidades para as regras de negócio do nosso ECo
 ## #SPRINT 02 (09/10/2021 -- 15/10/2021)
 ### Objetivo: Desenvolver e testar funcionalidades de 11 a 15
 ### #Sprint Backlog:
-- Exercicio11(); - ( )
+- Exercicio11(); - ( Marina )
 - Exercicio12(); - ( Guilherme )
 - Exercicio13(); - ( Guilherme )
-- Exercicio14(); - ( )
+- Exercicio14(); - ( Marina )
 - Exercicio15(); - ( )
 
