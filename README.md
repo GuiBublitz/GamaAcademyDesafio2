@@ -46,5 +46,5 @@ Objetivo:  criar várias funcionalidades para as regras de negócio do nosso ECo
 - Exercicio12(); - ( Guilherme )
 - Exercicio13(); - ( Guilherme )
 - Exercicio14(); - ( Marina )
-- Exercicio15(); - ( )
+- Exercicio15(); - ( Miquéias )
 
