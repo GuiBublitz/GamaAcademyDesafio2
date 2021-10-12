@@ -1122,7 +1122,7 @@ function exercicio1() {
     let produto = listaProdutos[i]
     total = total + produto.qtdEstoque
   }
-  console.log('Total de produtos em estoque: ' + total)
+  console.log('Total de produtos em estoque =' + ' ' + total)
 }
 
 function exercicio4(){
@@ -1134,7 +1134,7 @@ function exercicio4(){
         total = total + produto.qtdEstoque; 
       }
   }
-  console.log("Total de itens disponíveis e em destaque: " + total)
+  console.log("Total de itens disponíveis e em destaque:" + total)
 }
 
 function exercicio7(){
@@ -1158,5 +1158,70 @@ function exercicio10(){
       ticket = ticket + totalPrecoProdutos;
   }
   var NumeroItens = listaProdutos.length;
-  console.log("Valor do ticket médio dos produtos da empresa é de: " + (ticket / NumeroItens).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+  console.log("Valor do ticket médio dos produtos da empresa é de: " + ticket / NumeroItens);
+}
+
+function exercicio11(){
+  var listaDepartamentos = [];
+  let codDepartamento = 0;
+  for(i= 0; i < listaProdutos.length; i++){
+      let produto = listaProdutos[i];
+      if(produto.departamento.idDepto != codDepartamento){
+          let itemLista = {
+              nomeDepto : produto.departamento.nomeDepto,
+              idDepto : produto.departamento.idDepto,
+              qtdEstoque : 0
+          };
+          listaDepartamentos.push(itemLista);
+          codDepartamento = produto.departamento.idDepto;
+      }
+  }
+  for(i=0;i< listaProdutos.length; i++){
+      let produto = listaProdutos[i];
+      for(j=0; j < listaDepartamentos.length; j++){
+          if(produto.departamento.idDepto == listaDepartamentos[j].idDepto){
+              listaDepartamentos[j].qtdEstoque = listaDepartamentos[j].qtdEstoque + produto.qtdEstoque;
+              break;
+          }
+      }
+  }
+  console.log(listaDepartamentos);
+}
+
+function exercicio14(){
+  var listaDepartamentos = [];
+  let codDepto = 0;
+  for(i= 0; i < listaProdutos.length; i++){
+      let produto = listaProdutos[i];
+      if(produto.departamento.idDepto != codDepto){
+          let itemLista = {
+              nomeDepto : produto.departamento.nomeDepto,
+              idDepto : produto.departamento.idDepto,
+              valorInventario: 0
+          };
+          listaDepartamentos.push(itemLista);
+          codDepto = produto.departamento.idDepto;
+      }
+  }
+  //valor do estoque por departamento
+  for(i=0;i< listaProdutos.length; i++){
+      let produto = listaProdutos[i];
+      for(j=0; j < listaDepartamentos.length; j++){
+          if(produto.departamento.idDepto == listaDepartamentos[j].idDepto){
+              listaDepartamentos[j].valorInventario = ((listaDepartamentos[j].valorInventario) + (produto.preco * produto.qtdEstoque));
+              
+              break;
+          }
+      }
+  }
+
+  var departamentoMaisValioso = listaDepartamentos[0];
+  for(i = 0; i < listaDepartamentos.length; i++){
+      let produto = listaDepartamentos[i];
+      if (produto.valorInventario > departamentoMaisValioso.valorInventario){
+          departamentoMaisValioso = produto;
+      }
+  }   
+  departamentoMaisValioso.valorInventario = departamentoMaisValioso.valorInventario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+  console.log(departamentoMaisValioso);
 }
