@@ -1143,7 +1143,7 @@ function exercicio9(){
             ProdutoMenosValioso = produto;
         }
     }
-    console.log("Produto de estoque menos valioso é o "+ ProdutoMenosValioso.descricao + " cujo preço da unidade é de R$" + ProdutoMenosValioso.preco +
+    console.log("Produto de estoque menos valioso é o "+ ProdutoMenosValioso.descricao + " cujo preço da unidade é de R$" + ProdutoMenosValioso.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) +
     " e o valor do estoque é de "+(ProdutoMenosValioso.preco * ProdutoMenosValioso.qtdEstoque).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
 }
 function exercicio12(){

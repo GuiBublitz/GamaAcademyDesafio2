@@ -1122,7 +1122,7 @@ function exercicio1() {
     let produto = listaProdutos[i]
     total = total + produto.qtdEstoque
   }
-  console.log('Total de produtos em estoque =' + ' ' + total)
+  console.log('Total de produtos em estoque: ' + total)
 }
 
 function exercicio4(){
@@ -1134,7 +1134,7 @@ function exercicio4(){
         total = total + produto.qtdEstoque; 
       }
   }
-  console.log("Total de itens disponíveis e em destaque:" + total)
+  console.log("Total de itens disponíveis e em destaque: " + total)
 }
 
 function exercicio7(){
@@ -1146,8 +1146,9 @@ function exercicio7(){
           produtoMaisBaratoLoja = produto;
       }
   }
-  console.log("O produto mais barato da empresa é:")
-  console.log(produtoMaisBaratoLoja)
+  console.log("O produto mais barato da loja é o "+produtoMaisBaratoLoja.descricao+" cujo preço é de "
+    +produtoMaisBaratoLoja.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) );
+    console.log("Departamento ID:"+produtoMaisBaratoLoja.departamento.idDepto +", Departamento nome:"+ produtoMaisBaratoLoja.departamento.nomeDepto)
 }
 
 function exercicio10(){
@@ -1158,7 +1159,7 @@ function exercicio10(){
       ticket = ticket + totalPrecoProdutos;
   }
   var NumeroItens = listaProdutos.length;
-  console.log("Valor do ticket médio dos produtos da empresa é de: " + ticket / NumeroItens);
+  console.log("Valor do ticket médio dos produtos da empresa é de: " + (ticket / NumeroItens).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
 }
 
 function exercicio11(){
