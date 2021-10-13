@@ -1237,6 +1237,46 @@ function exercicio13(){
 /* --- --- --- */
     console.log(listaDeptos);
 }
+
+function exercicio15(){
+    var listaDeptos = [];
+    let codDepto = 0;
+    for(i= 0; i < listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        if(produto.departamento.idDepto != codDepto){
+            let itemLista = {
+                nomeDepto : produto.departamento.nomeDepto,
+                idDepto : produto.departamento.idDepto,
+                valorInventario: 0
+
+            };
+            listaDeptos.push(itemLista);
+            codDepto = produto.departamento.idDepto;
+        }
+    }
+/*Quanto vale meu estoque por departamento*/ 
+    for(i=0;i< listaProdutos.length; i++){
+        let produto = listaProdutos[i];
+        for(j=0; j < listaDeptos.length; j++){
+            if(produto.departamento.idDepto == listaDeptos[j].idDepto){
+                listaDeptos[j].valorInventario = ((listaDeptos[j].valorInventario) + (produto.preco * produto.qtdEstoque));
+                
+                break;
+            }
+        }
+    }
+/*------------------------*/ 
+    var departamentoMenosValioso = listaDeptos[0];
+    for(i = 0; i < listaDeptos.length; i++){
+        let produto = listaDeptos[i];
+        if (produto.valorInventario < departamentoMenosValioso.valorInventario){
+            departamentoMenosValioso = produto;
+        }
+    }   
+    departamentoMenosValioso.valorInventario = departamentoMenosValioso.valorInventario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    console.log(departamentoMenosValioso);
+}
+
 function all(){
     console.log("");
     console.log("Exercício Número 1:");
@@ -1280,6 +1320,9 @@ function all(){
     console.log("");
     console.log("Exercício Número 14:");
     exercicio14();
+    console.log("");
+    console.log("Exercício Número 15:");
+    exercicio15();
     console.log("");
     
     
