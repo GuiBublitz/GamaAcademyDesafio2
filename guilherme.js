@@ -1269,11 +1269,18 @@ function all(){
     console.log("Exercício Número 10:");
     exercicio10();
     console.log("");
+    console.log("Exercício Número 11:");
+    exercicio11();
+    console.log("");
     console.log("Exercício Número 12:");
     exercicio12();
     console.log("");
     console.log("Exercício Número 13:");
     exercicio13();
     console.log("");
+    console.log("Exercício Número 14:");
+    exercicio14();
+    console.log("");
+    
     
 }
