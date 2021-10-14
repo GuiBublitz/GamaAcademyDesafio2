@@ -1137,3 +1137,47 @@ function exercicio8(){
     console.log("O produto de estoque mais valioso é: " + ProdutoMaisValioso.descricao + ", em que o valor unitário é de " + ProdutoMaisValioso.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) +
     " e o valor acumulado do estoque é de " + (ProdutoMaisValioso.preco * ProdutoMaisValioso.qtdEstoque).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
 }
+
+function exercicio1(){
+    var numero = 0;
+    for(i = 0; i < listaProdutos.length; i++){
+        let item = listaProdutos[i];
+        numero = numero + item.qtdEstoque;
+    }
+    console.log("Quantidade de itens em estoque: " + numero);
+}
+
+function exercicio15(){
+    var listaDeptos = [];
+    let codDepto = 0;
+    for(i= 0; i < listaProdutos.length; i++){
+        let item = listaProdutos[i];
+        if(item.departamento.idDepto != codDepto){
+            let itemLista = {
+                nomeDepto : item.departamento.nomeDepto,
+                idDepto : item.departamento.idDepto,
+                valorCatalogo: 0
+            };
+            listaDeptos.push(itemLista);
+            codDepto = item.departamento.idDepto;
+        }
+    }
+    for(i=0;i< listaProdutos.length; i++){
+        let item = listaProdutos[i];
+        for(j=0; j < listaDeptos.length; j++){
+            if(item.departamento.idDepto == listaDeptos[j].idDepto){
+                listaDeptos[j].valorCatalogo = ((listaDeptos[j].valorCatalogo) + (item.preco * item.qtdEstoque));
+                break;
+            }
+        }
+    }
+    var departamentoMenosValioso = listaDeptos[0];
+    for(i = 0; i < listaDeptos.length; i++){
+        let item = listaDeptos[i];
+        if (item.valorCatalogo < departamentoMenosValioso.valorCatalogo){
+            departamentoMenosValioso = item;
+        }
+    }   
+    departamentoMenosValioso.valorCatalogo = departamentoMenosValioso.valorCatalogo.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    console.log(departamentoMenosValioso);
+}
