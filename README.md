@@ -1,3 +1,20 @@
+<p align="center">
+  <img src="https://github.com/scillapinheiro/gama_academy_desafio-1/blob/main/logo-gama-academy.png" width="50%">
+</p>
+
+<p align="center">
+  <a href="#-Projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-executando-o-projeto">Executando o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+ <a href="#-Grupo">Grupo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
+
+<p align="center">
+  <img alt="Grama XP 39" src="https://img.shields.io/static/v1?label=xp&message=39&color=success&labelColor=grey">
+  
+  <img alt="Stack Hacker" src="https://img.shields.io/static/v1?label=stack&message=hacker&color=success&labelColor=grey">
+  
+</p>
+
 # #GamaAcademy[Hacker] - DESAFIO EM GRUPO 1 (GRUPO 10)
 # Link: <a href="https://guibublitz.github.io/GamaAcademyDesafio2/">Clique aqui para abir o projeto no seu navegador</a>.
 <h1>Integrantes: Guilherme Bublitz / Marina Medeiros / Miquéias Lima </h1>
